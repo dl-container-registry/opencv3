@@ -1,6 +1,8 @@
+version: 2
 jobs:
   build:
     steps:
+      - checkout
       - setup_remote_docker
       - run: make build
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
